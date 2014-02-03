@@ -30,12 +30,12 @@ public class FileReceiver implements Runnable {
 	        String fileName = inputStream.readUTF();
         	System.out.println("Receiving file: "+fileName);
         	outFile = new FileOutputStream(new File("/tmp/"+fileName));
-        	byte[] buffer = new byte[512];
+        	byte[] buffer = new byte[2048];
         	int read = 0;
         	long reveivedBytes = 0;
         	long startTime = System.currentTimeMillis();
 	        while(true) {
-	        	reveivedBytes += 512;
+	        	reveivedBytes += 2048;
 	        	read = inputStream.read(buffer);
 	        	if (read!=-1) {
 	        		outFile.write(buffer, 0, read);

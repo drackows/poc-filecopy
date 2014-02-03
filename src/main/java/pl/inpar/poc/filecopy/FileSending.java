@@ -38,7 +38,7 @@ public class FileSending implements Runnable {
 		FileInputStream fileInputStream = null;
 		
 		int number;
-		byte[] buffer = new byte[512];
+		byte[] buffer = new byte[2048];
 		
 		try {
 	        inputStream = new DataInputStream(socket.getInputStream());
